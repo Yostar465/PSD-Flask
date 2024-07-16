@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Slot Detection</title>
+</head>
+<body>
+    <h1>Parking Slot Detection</h1>
+    <img src="{{ url_for('video_feed') }}" width="640" height="480" />
+    <h2>Occupied Slots:</h2>
+    <p id="occupied_slots">Loading...</p>
+
+    <script type="text/javascript">
+        function getOccupiedSlots() {
+            fetch('/occupied_slots')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('occupied_slots').textContent = data.occupied_slots;
+                });
+        }
+        // Refresh data setiap 5 detik
+        setInterval(getOccupiedSlots, 5000);
+    </script>
+</body>
+</html>

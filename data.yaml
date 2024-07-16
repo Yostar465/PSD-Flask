@@ -1,0 +1,13 @@
+names:
+- belum terisi
+- sudah terisi
+nc: 2
+roboflow:
+  license: CC BY 4.0
+  project: parkir-eyujg
+  url: https://universe.roboflow.com/yostar465/parkir-eyujg/dataset/3
+  version: 3
+  workspace: yostar465
+test: test/images
+train: train/images
+val: valid/images
